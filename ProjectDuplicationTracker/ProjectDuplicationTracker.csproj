@@ -41,7 +41,7 @@
     <Reference Include="ExtensionHelpers">
       <HintPath>..\References\ExtensionHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="ExtensionTypes, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ExtensionTypes, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <HintPath>..\References\ExtensionTypes.dll</HintPath>
     </Reference>
