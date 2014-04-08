@@ -9,6 +9,7 @@
 
 namespace ProjectDuplicationTracker
 {
+    using System;
     using System.ComponentModel.Composition;
     using System.Windows.Controls;
 
@@ -78,6 +79,34 @@ namespace ProjectDuplicationTracker
             this.InitModel(configuration, project, vshelper);
 
             this.model.UpdateConfiguration(configuration, project, vshelper);
+        }
+
+        public PluginDescription GetPluginDescription(IVsEnvironmentHelper vsinter)
+        {
+            var isEnabled = vsinter.ReadOptionFromApplicationData(GlobalIds.PluginEnabledControlId, "DuplicationsPlugin");
+
+            var desc = new PluginDescription()
+            {
+                Description = "Duplications Plugin",
+                Enabled = true,
+                Name = "DuplicationsPlugin",
+                SupportedExtensions = "*"
+            };
+
+            if (string.IsNullOrEmpty(isEnabled))
+            {
+                desc.Enabled = true;
+            }
+            else if (isEnabled.Equals("true", StringComparison.CurrentCultureIgnoreCase))
+            {
+                desc.Enabled = true;
+            }
+            else
+            {
+                desc.Enabled = false;
+            }
+
+            return desc;
         }
 
         /// <summary>
