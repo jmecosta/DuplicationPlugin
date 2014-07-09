@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\configuration.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -38,10 +39,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExtensionHelpers">
+    <Reference Include="ExtensionHelpers, Version=$(VSSonarExtensionVersion), Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ExtensionHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="ExtensionTypes">
+    <Reference Include="ExtensionTypes, Version=$(VSSonarExtensionVersion), Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\References\ExtensionTypes.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Data">
@@ -52,7 +55,8 @@
     <Reference Include="RestSharp">
       <HintPath>..\References\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="SonarRestService">
+    <Reference Include="SonarRestService, Version=$(VSSonarExtensionVersion), Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\References\SonarRestService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -67,7 +71,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="VSSonarPlugins">
+    <Reference Include="VSSonarPlugins, Version=$(VSSonarExtensionVersion), Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\References\VSSonarPlugins.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
