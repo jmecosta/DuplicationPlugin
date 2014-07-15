@@ -21,7 +21,7 @@ namespace ProjectDuplicationTracker
     /// <summary>
     /// The duplication tracker plugin.
     /// </summary>
-    [Export(typeof(IMenuCommandPlugin))]
+    [Export(typeof(IPlugin))]
     public class DuplicationTrackerPlugin : IMenuCommandPlugin
     {
         /// <summary>
@@ -91,7 +91,8 @@ namespace ProjectDuplicationTracker
                 Description = "Duplications Plugin",
                 Enabled = true,
                 Name = "DuplicationsPlugin",
-                SupportedExtensions = "*"
+                SupportedExtensions = "*",
+                Version = this.GetVersion()
             };
 
             if (string.IsNullOrEmpty(isEnabled))
