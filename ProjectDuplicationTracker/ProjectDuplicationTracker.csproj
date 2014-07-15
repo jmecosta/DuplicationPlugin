@@ -132,11 +132,9 @@
     <DesignData Include="SampleData\ProjectDuplicationTrackerModelSampleData.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(MSBuildFolder)\AssemblyPatcherTask.targets" />
+  <PropertyGroup>
+    <PackageFiles>$(OutputPath)$(AssemblyName).dll</PackageFiles>
+  </PropertyGroup>   
+  <Import Project="$(MSBuildFolder)\CreatePlugin.targets" />  
 </Project>
