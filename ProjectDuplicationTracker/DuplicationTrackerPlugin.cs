@@ -11,6 +11,7 @@ namespace ProjectDuplicationTracker
 {
     using System;
     using System.ComponentModel.Composition;
+    using System.Reflection;
     using System.Windows.Controls;
 
     using ExtensionTypes;
@@ -129,6 +130,16 @@ namespace ProjectDuplicationTracker
                 this.model.Login();
                 this.model.SelectMainResource(project);
             }
+        }
+
+        public string GetVersion()
+        {
+            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+
+        public string GetAssemblyPath()
+        {
+            return Assembly.GetExecutingAssembly().Location;
         }
     }
 }
