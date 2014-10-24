@@ -17,11 +17,11 @@ namespace ProjectDuplicationTracker
     {
         private List<DuplicationData> duplicatedData;
 
-        private ConnectionConfiguration conf;
+        private ISonarConfiguration conf;
 
         private ISonarRestService service;
 
-        public SonarProject(Resource project, ISonarRestService service, ConnectionConfiguration conf)
+        public SonarProject(Resource project, ISonarRestService service, ISonarConfiguration conf)
         {
             this.service = service;
             this.conf = conf;

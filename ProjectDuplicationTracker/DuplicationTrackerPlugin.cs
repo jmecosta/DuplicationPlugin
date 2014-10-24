@@ -55,7 +55,7 @@ namespace ProjectDuplicationTracker
         /// <returns>
         /// The <see cref="UserControl"/>.
         /// </returns>
-        public UserControl GetUserControl(ConnectionConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
+        public UserControl GetUserControl(ISonarConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
         {
             this.InitModel(configuration, project, vshelper);
             
@@ -75,7 +75,7 @@ namespace ProjectDuplicationTracker
         /// <param name="vshelper">
         /// The vshelper.
         /// </param>
-        public void UpdateConfiguration(ConnectionConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
+        public void UpdateConfiguration(ISonarConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
         {
             this.InitModel(configuration, project, vshelper);
 
@@ -123,7 +123,7 @@ namespace ProjectDuplicationTracker
         /// <param name="vshelper">
         /// The vshelper.
         /// </param>
-        private void InitModel(ConnectionConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
+        private void InitModel(ISonarConfiguration configuration, Resource project, IVsEnvironmentHelper vshelper)
         {
             if (this.model == null)
             {

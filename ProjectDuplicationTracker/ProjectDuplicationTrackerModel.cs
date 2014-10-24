@@ -33,7 +33,7 @@ namespace ProjectDuplicationTracker
         /// <summary>
         /// The conf.
         /// </summary>
-        private ConnectionConfiguration conf;
+        private ISonarConfiguration conf;
 
         /// <summary>
         /// The service.
@@ -167,7 +167,7 @@ namespace ProjectDuplicationTracker
         /// <param name="vshelper">
         /// The vshelper.
         /// </param>
-        public ProjectDuplicationTrackerModel(ConnectionConfiguration conf, IVsEnvironmentHelper vshelper)
+        public ProjectDuplicationTrackerModel(ISonarConfiguration conf, IVsEnvironmentHelper vshelper)
         {
             this.vshelper = vshelper;
             this.UserIsLoggedIn = false;
@@ -498,7 +498,7 @@ namespace ProjectDuplicationTracker
         /// <param name="vsenvironmentHelper">
         /// The vs environment helper.
         /// </param>
-        public void UpdateConfiguration(ConnectionConfiguration configuration, Resource project, IVsEnvironmentHelper vsenvironmentHelper)
+        public void UpdateConfiguration(ISonarConfiguration configuration, Resource project, IVsEnvironmentHelper vsenvironmentHelper)
         {
             this.conf = configuration;
             if (this.conf != null)
