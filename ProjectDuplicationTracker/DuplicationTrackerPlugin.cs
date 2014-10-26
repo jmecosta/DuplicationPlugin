@@ -13,6 +13,7 @@ namespace ProjectDuplicationTracker
     using System.ComponentModel.Composition;
     using System.Reflection;
     using System.Windows.Controls;
+    using System.Windows.Media;
 
     using ExtensionTypes;
 
@@ -109,6 +110,19 @@ namespace ProjectDuplicationTracker
             }
 
             return desc;
+        }
+
+        /// <summary>
+        /// The update theme.
+        /// </summary>
+        /// <param name="backgroundColor">
+        /// The background color.
+        /// </param>
+        /// <param name="foregroundColor">
+        /// The foreground color.
+        /// </param>
+        public void UpdateTheme(Color backgroundColor, Color foregroundColor)
+        {
         }
 
         /// <summary>
