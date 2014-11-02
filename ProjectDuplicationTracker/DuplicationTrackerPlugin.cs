@@ -83,7 +83,7 @@ namespace ProjectDuplicationTracker
             this.model.UpdateConfiguration(configuration, project, vshelper);
         }
 
-        public PluginDescription GetPluginDescription(IVsEnvironmentHelper vsinter)
+        public PluginDescription GetPluginDescription(IConfigurationHelper vsinter)
         {
             var isEnabled = vsinter.ReadOptionFromApplicationData(GlobalIds.PluginEnabledControlId, "DuplicationsPlugin");
 

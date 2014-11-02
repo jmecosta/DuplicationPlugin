@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+    <Import Project="configuration.props" Condition="'$(MSBuildFolder)'==''"/>
+
+    <ItemGroup>
+        <QualityEditorPlugin Include="ProjectDuplicationTracker.sln" />
+    </ItemGroup>
+    
+    <Target Name="BuildPlugin" >
+        <MSBuild Projects="@(QualityEditorPlugin)" Properties="Configuration=Release" BuildInParallel="true" StopOnFirstFailure="true" />
+    </Target>
+    
+    <Target Name="Build" DependsOnTargets="BuildPlugin">
+    </Target>
+</Project>
