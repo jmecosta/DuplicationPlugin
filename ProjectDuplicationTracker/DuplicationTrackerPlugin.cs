@@ -19,6 +19,7 @@ namespace ProjectDuplicationTracker
     using System.Reflection;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using System.Collections.Generic;
 
     using ExtensionTypes;
 
@@ -34,6 +35,57 @@ namespace ProjectDuplicationTracker
         /// The model.
         /// </summary>
         private ProjectDuplicationTrackerModel model;
+
+        public DuplicationTrackerPlugin()
+        {
+            this.Desc = new PluginDescription
+            {
+                Description = "Duplications Plugin",
+                Name = "Duplications",
+                SupportedExtensions = "*",
+                Version = this.GetVersion(),
+                AssemblyPath = this.GetAssemblyPath()
+            };
+        }
+
+        public PluginDescription Desc { get; set; }
+
+        public IPluginsOptions GetPluginControlOptions(ISonarConfiguration configuration)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// The generate token id.
+        /// </summary>
+        /// <param name="configuration">
+        /// The configuration.
+        /// </param>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
+        public string GenerateTokenId(ISonarConfiguration configuration)
+        {
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// The get licenses.
+        /// </summary>
+        /// <param name="configuration">
+        /// The configuration.
+        /// </param>
+        /// <returns>
+        /// The
+        ///     <see>
+        ///         <cref>Dictionary</cref>
+        ///     </see>
+        ///     .
+        /// </returns>
+        public Dictionary<string, VsLicense> GetLicenses(ISonarConfiguration configuration)
+        {
+            return new Dictionary<string, VsLicense>();
+        }
 
         /// <summary>
         /// The get header.
@@ -88,33 +140,9 @@ namespace ProjectDuplicationTracker
             this.model.UpdateConfiguration(configuration, project, vshelper);
         }
 
-        public PluginDescription GetPluginDescription(IConfigurationHelper vsinter)
+        public PluginDescription GetPluginDescription()
         {
-            var isEnabled = vsinter.ReadOptionFromApplicationData(GlobalIds.PluginEnabledControlId, "DuplicationsPlugin");
-
-            var desc = new PluginDescription()
-            {
-                Description = "Duplications Plugin",
-                Enabled = true,
-                Name = "DuplicationsPlugin",
-                SupportedExtensions = "*",
-                Version = this.GetVersion()
-            };
-
-            if (string.IsNullOrEmpty(isEnabled))
-            {
-                desc.Enabled = true;
-            }
-            else if (isEnabled.Equals("true", StringComparison.CurrentCultureIgnoreCase))
-            {
-                desc.Enabled = true;
-            }
-            else
-            {
-                desc.Enabled = false;
-            }
-
-            return desc;
+            return this.Desc;
         }
 
         /// <summary>
