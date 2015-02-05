@@ -35,7 +35,7 @@ namespace StandaloneDuplicationTracker
     /// <summary>
     /// Interaction logic for DuplicationUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
@@ -57,7 +57,7 @@ namespace StandaloneDuplicationTracker
 
             var model = new ProjectDuplicationTrackerModel();
             model.Login();
-            var win = new Window();
+            var win = new MahApps.Metro.Controls.MetroWindow();
             var view = new DuplicationUserControl(model);
             win.Content = view;
             win.SizeToContent = SizeToContent.WidthAndHeight;

@@ -156,6 +156,10 @@ namespace ProjectDuplicationTracker
         /// </param>
         public void UpdateTheme(Color backgroundColor, Color foregroundColor)
         {
+            if (this.model != null)
+            {
+                this.model.UpdateColours(backgroundColor, foregroundColor);
+            }
         }
 
         /// <summary>

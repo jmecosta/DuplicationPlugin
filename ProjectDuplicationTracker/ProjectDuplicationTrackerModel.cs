@@ -29,6 +29,7 @@ namespace ProjectDuplicationTracker
     using SonarRestService;
 
     using VSSonarPlugins;
+    using System.Windows.Media;
 
     /// <summary>
     /// The project duplication tracker model.
@@ -79,6 +80,17 @@ namespace ProjectDuplicationTracker
         /// The cross project resources.
         /// </summary>
         private List<SonarProject> crossProjectResources;
+
+        /// <summary>
+        ///     Gets or sets the fore ground color.
+        /// </summary>
+        public Color ForeGroundColor { get; set; }
+
+
+        /// <summary>
+        ///     Gets or sets the back ground color.
+        /// </summary>
+        public Color BackGroundColor { get; set; }
 
         /// <summary>
         /// The status message.
@@ -161,6 +173,8 @@ namespace ProjectDuplicationTracker
             this.vshelper = null;
             this.Login();
             this.IsIdle = true;
+
+            this.UpdateColours(Colors.White, Colors.Black);
         }
 
         /// <summary>
@@ -179,6 +193,8 @@ namespace ProjectDuplicationTracker
             this.conf = conf;
             this.Login();
             this.IsIdle = true;
+
+            this.UpdateColours(Colors.White, Colors.Black);
         }
 
         /// <summary>
@@ -740,6 +756,20 @@ namespace ProjectDuplicationTracker
         public SonarProject FirstProject { get; set; }
         public SonarProject SecondProject { get; set; }
 
+        /// <summary>
+        /// The update colours.
+        /// </summary>
+        /// <param name="background">
+        /// The background.
+        /// </param>
+        /// <param name="foreground">
+        /// The foreground.
+        /// </param>
+        public void UpdateColours(Color background, Color foreground)
+        {
+            this.BackGroundColor = background;
+            this.ForeGroundColor = foreground;
+        }
 
         /// <summary>
         /// The on property changed.

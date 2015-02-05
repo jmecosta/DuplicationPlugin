@@ -1,7 +1,22 @@
-﻿<Window x:Class="StandaloneDuplicationTracker.MainWindow"
+﻿<Controls:MetroWindow x:Class="StandaloneDuplicationTracker.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="DuplicationUserControl" Height="130" Width="445" WindowStyle="None">
+        Title="DuplicationUserControl" Height="150" MaxHeight="150" MaxWidth="445" Width="445" WindowStyle="None">
+
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Controls:MetroWindow.Resources>
+    
     <Grid>
     	<Grid>
     		<Grid.ColumnDefinitions>
@@ -25,4 +40,4 @@
     	</Grid>
         
     </Grid>
-</Window>
+</Controls:MetroWindow>
