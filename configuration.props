@@ -31,7 +31,7 @@
         <OutFolder Condition="'$(VSVersion)'=='15.0'">vs15</OutFolder>
         <OutFolder Condition="'$(VSVersion)'=='12.0'">vs12</OutFolder>
         
-        <PluginsOutputPath     Condition="'$(PluginsOutputPath)'==''">$(MSBuildThisFileDirectory)BuildDrop\$(FSharpFolder)\</PluginsOutputPath>
+        <PluginsOutputPath     Condition="'$(PluginsOutputPath)'==''">$(MSBuildThisFileDirectory)BuildDrop\$(OutFolder)\</PluginsOutputPath>
         <OBJDir>$(MSBuildThisFileDirectory)ObjDrop\$(OutFolder)\$(Configuration)\$(TSPlatform)</OBJDir>
         <IntermediateOutputPath>$(OBJDir)$(MSBuildProjectName)\</IntermediateOutputPath>
     </PropertyGroup>    
