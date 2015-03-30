@@ -22,7 +22,7 @@ namespace ProjectDuplicationTracker
     using System.Linq;
     using System.Runtime.CompilerServices;
 
-    using ExtensionTypes;
+    using VSSonarPlugins.Types;
 
     using ProjectDuplicationTracker.Annotations;
 

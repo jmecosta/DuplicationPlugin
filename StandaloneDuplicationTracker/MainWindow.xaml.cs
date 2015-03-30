@@ -28,7 +28,7 @@ using System.Windows.Shapes;
 
 namespace StandaloneDuplicationTracker
 {
-    using ExtensionTypes;
+    using VSSonarPlugins.Types;
 
     using ProjectDuplicationTracker;
 

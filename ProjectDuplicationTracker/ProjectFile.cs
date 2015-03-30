@@ -13,7 +13,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ProjectDuplicationTracker
 {
-    using ExtensionTypes;
+    using VSSonarPlugins.Types;
 
     /// <summary>
     /// The project file.

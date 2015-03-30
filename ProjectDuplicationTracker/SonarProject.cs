@@ -17,11 +17,13 @@ namespace ProjectDuplicationTracker
     using System.Collections.Generic;
     using System.Linq;
 
-    using ExtensionHelpers;
+    using VSSonarPlugins.Types;
 
-    using ExtensionTypes;
+    
 
     using SonarRestService;
+
+    using VSSonarPlugins.Helpers;
 
     /// <summary>
     /// The sonar project.

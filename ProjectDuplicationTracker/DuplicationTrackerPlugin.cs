@@ -21,7 +21,7 @@ namespace ProjectDuplicationTracker
     using System.Windows.Media;
     using System.Collections.Generic;
 
-    using ExtensionTypes;
+    using VSSonarPlugins.Types;
 
     using VSSonarPlugins;
 
@@ -50,7 +50,7 @@ namespace ProjectDuplicationTracker
 
         public PluginDescription Desc { get; set; }
 
-        public IPluginsOptions GetPluginControlOptions(ISonarConfiguration configuration)
+        public IPluginControlOption GetPluginControlOptions(ISonarConfiguration configuration)
         {
             return null;
         }
@@ -67,6 +67,11 @@ namespace ProjectDuplicationTracker
         public string GenerateTokenId(ISonarConfiguration configuration)
         {
             return string.Empty;
+        }
+
+        public IPluginControlOption GetPluginControlOptions(Resource project, ISonarConfiguration configuration)
+        {
+            return null;
         }
 
         /// <summary>
@@ -143,6 +148,15 @@ namespace ProjectDuplicationTracker
         public PluginDescription GetPluginDescription()
         {
             return this.Desc;
+        }
+
+        public void ResetDefaults()
+        {
+        }
+
+        public void AssociateProject(Resource project, ISonarConfiguration configuration)
+        {
+            this.model.SelectMainResource(project);
         }
 
         /// <summary>
