@@ -38,12 +38,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion)">
-      <SpecificVersion>True</SpecificVersion>
-    </Reference>
-    <Reference Include="FSharp.Data">
-      <HintPath>..\References\$(FSharpFolder)\FSharp.Data.dll</HintPath>
-    </Reference>
     <Reference Include="MahApps.Metro, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
@@ -52,10 +46,6 @@
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="RestSharp">
       <HintPath>..\References\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="SonarRestService, Version=$(VSSonarExtensionVersion), Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\References\$(FSharpFolder)\SonarRestService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />

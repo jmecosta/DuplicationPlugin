@@ -26,8 +26,7 @@ namespace ProjectDuplicationTracker
 
     using ProjectDuplicationTracker.Annotations;
 
-    using SonarRestService;
-
+    
     using VSSonarPlugins;
     using System.Windows.Media;
 
@@ -44,7 +43,7 @@ namespace ProjectDuplicationTracker
         /// <summary>
         /// The service.
         /// </summary>
-        private ISonarRestService service = new SonarRestService(new JsonSonarConnector());
+        private readonly ISonarRestService service;
 
         /// <summary>
         /// The vshelper.
@@ -173,6 +172,7 @@ namespace ProjectDuplicationTracker
             this.vshelper = null;
             this.Login();
             this.IsIdle = true;
+            this.service = null;
 
             this.UpdateColours(Colors.White, Colors.Black);
         }
@@ -186,8 +186,9 @@ namespace ProjectDuplicationTracker
         /// <param name="vshelper">
         /// The vshelper.
         /// </param>
-        public ProjectDuplicationTrackerModel(ISonarConfiguration conf, IVsEnvironmentHelper vshelper)
+        public ProjectDuplicationTrackerModel(ISonarConfiguration conf, IVsEnvironmentHelper vshelper, ISonarRestService service)
         {
+            this.service = service;
             this.vshelper = vshelper;
             this.UserIsLoggedIn = false;
             this.conf = conf;

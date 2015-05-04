@@ -35,9 +35,11 @@ namespace ProjectDuplicationTracker
         /// The model.
         /// </summary>
         private ProjectDuplicationTrackerModel model;
+        private readonly ISonarRestService service;
 
-        public DuplicationTrackerPlugin()
+        public DuplicationTrackerPlugin(ISonarRestService service)
         {
+            this.service = service;
             this.Desc = new PluginDescription
             {
                 Description = "Duplications Plugin",
@@ -192,7 +194,7 @@ namespace ProjectDuplicationTracker
         {
             if (this.model == null)
             {
-                this.model = new ProjectDuplicationTrackerModel(configuration, vshelper);
+                this.model = new ProjectDuplicationTrackerModel(configuration, vshelper, this.service);
                 this.model.Login();
                 this.model.SelectMainResource(project);
             }
