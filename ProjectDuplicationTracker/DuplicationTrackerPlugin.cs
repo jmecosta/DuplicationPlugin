@@ -36,6 +36,7 @@ namespace ProjectDuplicationTracker
         /// </summary>
         private ProjectDuplicationTrackerModel model;
         private readonly ISonarRestService service;
+        private List<string> Dlls = new List<string>();
 
         public DuplicationTrackerPlugin(ISonarRestService service)
         {
@@ -208,6 +209,20 @@ namespace ProjectDuplicationTracker
         public string GetAssemblyPath()
         {
             return Assembly.GetExecutingAssembly().Location;
+        }
+
+        public IList<string> DllLocations()
+        {
+            return this.Dlls;
+        }
+
+        public void SetDllLocation(string path)
+        {
+            this.Dlls.Add(path);
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
