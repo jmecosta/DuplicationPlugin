@@ -168,7 +168,7 @@ namespace ProjectDuplicationTracker
         public ProjectDuplicationTrackerModel()
         {
             this.UserIsLoggedIn = false;
-            this.conf = new ConnectionConfiguration("http://localhost", "admin", "admin");
+            this.conf = new ConnectionConfiguration("http://localhost", "admin", "admin", 4.5);
             this.vshelper = null;
             this.Login();
             this.IsIdle = true;
