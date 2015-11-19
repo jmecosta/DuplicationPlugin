@@ -6,8 +6,14 @@
         <Plugins Include="ProjectDuplicationTracker.sln" />
     </ItemGroup>
     
+    <PropertyGroup>
+        <!-- Basic settings -->
+        <SkipCopy Condition="'$(SkipCopy)'==''">Yes</SkipCopy>
+    </PropertyGroup>
+    
     <Target Name="BuildPlugin" >
-        <MSBuild Projects="@(Plugins)" Properties="Configuration=Release;VSVersion=12.0" BuildInParallel="true" StopOnFirstFailure="true" />
+        <MSBuild Projects="@(Plugins)" Properties="Configuration=Release" BuildInParallel="true" StopOnFirstFailure="true" />
+        <Copy Condition="'$(SkipCopy)'!='Yes'" SourceFiles="$(PluginsOutputPath)/ProjectDuplicationTracker.VSQ" DestinationFiles="$(EndVSQFile)"/>
     </Target>
     
     <Target Name="Build" DependsOnTargets="BuildPlugin">
