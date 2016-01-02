@@ -157,7 +157,7 @@ namespace ProjectDuplicationTracker
         {
         }
 
-        public void AssociateProject(Resource project, ISonarConfiguration configuration)
+        public void AssociateProject(Resource project, ISonarConfiguration configuration, Dictionary<string,Profile> profile)
         {
             this.model.SelectMainResource(project);
         }

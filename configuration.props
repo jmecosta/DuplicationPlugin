@@ -24,13 +24,14 @@
         <PluginsOutputPath     Condition="'$(PluginsOutputPath)'==''">$(MSBuildThisFileDirectory)BuildDrop\</PluginsOutputPath>
         <OBJDir>$(MSBuildThisFileDirectory)ObjDrop\$(Configuration)\$(TSPlatform)</OBJDir>
         <IntermediateOutputPath>$(OBJDir)$(MSBuildProjectName)\</IntermediateOutputPath>
+		<VSSonarExtensionVersion>3Api.5.0.0</VSSonarExtensionVersion>
     </PropertyGroup>    
 
     
     <!-- Basic settings -->
+    <!-- Basic settings -->
     <PropertyGroup>
-        <VSSonarExtensionVersion                                     Condition="'$(VSSonarExtensionVersion)'==''">4.1.0.0</VSSonarExtensionVersion>
-        <VSSonarExtensionPluginsVersion                              Condition="'$(VSSonarExtensionPluginsVersion)'==''">$(MajorVersionNumber).$(MinorVersionNumber).$(BuildNumber).$(RevisionNumber)</VSSonarExtensionPluginsVersion>
+        <VSSonarExtensionVersion                                     Condition="'$(VSVersion)'=='14.0'">4Api.5.0.0</VSSonarExtensionVersion>
     </PropertyGroup>
     
     </Project>
