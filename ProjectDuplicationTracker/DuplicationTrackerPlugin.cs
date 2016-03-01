@@ -224,5 +224,15 @@ namespace ProjectDuplicationTracker
         public void Dispose()
         {
         }
+
+
+        /// <summary>
+        /// Called when [connect to sonar].
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        public void OnConnectToSonar(ISonarConfiguration configuration)
+        {
+            // does nothing
+        }
     }
 }

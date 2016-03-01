@@ -110,3 +110,4 @@ Backup*/
 UpgradeLog*.XML
 ProjectDuplicationTracker.VSQ
 buildlog2015.txt
+*.orig
