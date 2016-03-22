@@ -24,7 +24,7 @@
         <PluginsOutputPath     Condition="'$(PluginsOutputPath)'==''">$(MSBuildThisFileDirectory)BuildDrop\</PluginsOutputPath>
         <OBJDir>$(MSBuildThisFileDirectory)ObjDrop\$(Configuration)\$(TSPlatform)</OBJDir>
         <IntermediateOutputPath>$(OBJDir)$(MSBuildProjectName)\</IntermediateOutputPath>
-		<VSSonarVersion>5.1.13</VSSonarVersion>
+		<VSSonarVersion>5.1.14</VSSonarVersion>
         <VSSonarExtensionVersion>3Api.$(VSSonarVersion)</VSSonarExtensionVersion>
     </PropertyGroup>    
 
