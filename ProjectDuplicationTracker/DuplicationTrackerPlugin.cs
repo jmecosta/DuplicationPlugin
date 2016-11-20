@@ -78,24 +78,6 @@ namespace ProjectDuplicationTracker
         }
 
         /// <summary>
-        /// The get licenses.
-        /// </summary>
-        /// <param name="configuration">
-        /// The configuration.
-        /// </param>
-        /// <returns>
-        /// The
-        ///     <see>
-        ///         <cref>Dictionary</cref>
-        ///     </see>
-        ///     .
-        /// </returns>
-        public Dictionary<string, VsLicense> GetLicenses(ISonarConfiguration configuration)
-        {
-            return new Dictionary<string, VsLicense>();
-        }
-
-        /// <summary>
         /// The get header.
         /// </summary>
         /// <returns>
